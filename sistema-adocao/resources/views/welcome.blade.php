@@ -61,7 +61,7 @@ https://templatemo.com/tm-570-chain-app-dev
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="/home" class="active">Home</a></li>
               <li class="scroll-to-section"><a href="#services">Serviços</a></li>
               <li class="scroll-to-section"><a href="#clients">Depoimentos</a></li>
               <li class="scroll-to-section"><a href="#pricing">Preços</a></li>
@@ -409,7 +409,7 @@ https://templatemo.com/tm-570-chain-app-dev
                               <div class="down-content">
                                 <img src="{{ URL::asset('/images/client-image.jpg') }}" alt="">
                                 <div class="right-content">
-                                  <h4>David Martino</h4>
+                                  <h4>Margareth Hamilton</h4>
                                   <span>CEO of AnimaisPerdidos.com</span>
                                 </div>
                               </div>

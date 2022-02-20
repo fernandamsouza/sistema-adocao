@@ -42,3 +42,12 @@ Route::post('/usuarios/update/{id}', [App\Http\Controllers\UsuariosController::c
 
 # Rota para dar update novos usuários do sistema 
 Route::delete('/usuarios/delete/{id}', [App\Http\Controllers\UsuariosController::class, 'delete'])->name('usuarios')->middleware('auth');
+
+# Rota para chegar na página de cadastrar os animais cadastrados no sistema 
+Route::get('/animais/cadastrar', [App\Http\Controllers\AnimaisController::class, 'cadastrar'])->name('animais')->middleware('auth');
+
+# Rota para mostrar os animais cadastrados do sistema 
+Route::post('/animais', [App\Http\Controllers\AnimaisController::class, 'index'])->name('animais')->middleware('auth');
+
+# Rota para add os animais cadastrados do sistema 
+Route::post('/animais/add', [App\Http\Controllers\AnimaisController::class, 'add'])->name('animais')->middleware('auth');

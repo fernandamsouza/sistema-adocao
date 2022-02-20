@@ -32,8 +32,13 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/home')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/animais/cadastrar')}}">Cadastrar Animal</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -59,8 +64,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                       onclick="event.preventDefault(); 
+                                       document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

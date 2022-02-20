@@ -22,3 +22,9 @@ Configure localhost database "sistema_adocao"
 php artisan migrate
 php artisan serve
 ````
+
+
+### TODO:
+
+- Fazer o front-end da listagem de animais;
+- Adicionar um campo com fotos do animal;
