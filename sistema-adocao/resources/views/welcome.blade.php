@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Chain App Dev - App Landing Page HTML5 Template</title>
-
+    <title>AdotAí - Conectando Animais e Pessoas</title>
+    <link rel="shortcut icon" sizes="114x114" href="{{ URL::asset('/images/dogau.png') }}">
     <!-- Bootstrap core CSS -->
     <link href="{{ URL::asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -56,7 +56,7 @@ https://templatemo.com/tm-570-chain-app-dev
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
-              <img src="{{ URL::asset('/images/logo3.png') }}" alt="Chain App Dev">
+              <img src="{{ URL::asset('/images/logo3.png') }}" alt="AdotAí">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
