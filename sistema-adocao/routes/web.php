@@ -51,3 +51,18 @@ Route::post('/animais', [App\Http\Controllers\AnimaisController::class, 'index']
 
 # Rota para add os animais cadastrados do sistema 
 Route::post('/animais/add', [App\Http\Controllers\AnimaisController::class, 'add'])->name('animais')->middleware('auth');
+
+# Rota para direcionar para tela de completar informacoes adicionais
+Route::get('/informacoes', [App\Http\Controllers\InformacoesController::class, 'index'])->name('informacoes')->middleware('auth');
+
+# Rota para direcionar para tela de completar informacoes adicionais
+Route::post('/informacoes/insert', [App\Http\Controllers\InformacoesController::class, 'insert'])->name('informacoes')->middleware('auth');
+
+# Rota para direcionar para tela de completar informacoes adicionais
+Route::get('/informacoes/formulario', [App\Http\Controllers\InformacoesController::class, 'formulario'])->name('informacoes')->middleware('auth');
+
+# Rota para direcionar para tela de completar informacoes adicionais
+Route::get('/informacoes/formulario/edit', [App\Http\Controllers\InformacoesController::class, 'edit'])->name('informacoes')->middleware('auth');
+
+# Rota para direcionar para tela de completar informacoes adicionais
+Route::post('/informacoes/editja', [App\Http\Controllers\InformacoesController::class, 'editja'])->name('informacoes')->middleware('auth');

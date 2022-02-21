@@ -39,6 +39,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/animais/cadastrar')}}">Cadastrar Animal</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/informacoes/')}}">Atualizar informações</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
