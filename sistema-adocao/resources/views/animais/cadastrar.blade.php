@@ -15,7 +15,7 @@
                 <h1>Cadastre o animal</h1>
             </div>
             <div class="card-body">
-                <form action="{{ url('animais/add') }}" method="post" > 
+                <form action="{{ url('animais/add') }}" method="post" enctype="multipart/form-data"> 
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nome:</label>
@@ -42,13 +42,17 @@
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3" id="preco">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Preço:</label>
+                                <label for="exampleInputEmail1">Preço/Recompensa:</label>
                                 <input type="text" name="preco" class="form-control" required>
                             </div>
                         </div>
                     </div>
                     <br>
-
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Selecione uma imagem para upload:</label>
+                        <input type="file" name="foto" required>
+                    </div>
+                    <br>
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="search-input">
@@ -123,6 +127,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- <input type="file" name="foto"> -->
                     <br>
                     <div style="text-align:center" >
                         <button type="submit" class="btn btn-primary">Cadastrar</button>

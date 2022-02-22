@@ -20,6 +20,7 @@ class Animai extends Model
         'castrado',
         'vacinas',
         'preco',
-        'sexo'
+        'sexo',
+        'foto'
     ];
 }

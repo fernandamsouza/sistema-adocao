@@ -55,17 +55,16 @@ class AnimaisController extends Controller
                 $estado = $informacoes[0]->estado;
                 $pais   = $informacoes[0]->pais;
                 $telefone   = $informacoes[0]->telefone_primario;
-
+                $imageURL = 'uploads/' . $value->foto;
+                
+                $resultado[$key]->foto     = $imageURL;
                 $resultado[$key]->telefone = $telefone;
                 $resultado[$key]->cidade = $cidade;
                 $resultado[$key]->estado = $estado;
                 $resultado[$key]->pais   = $pais;
             }
             $resultado[$key]->usu_atual = Auth::user()->id;
-
-
         }
-
 
         return view('animais.list', ['animais' => $resultado]);
     }
@@ -92,6 +91,18 @@ class AnimaisController extends Controller
             $id_porte = DB::table('portes')->where('porte', $input["porte"])->value('id');
         }
 
+        $filename = $_FILES["foto"]["name"];
+        $tempname = $_FILES["foto"]["tmp_name"]; 
+        $folder = "uploads/".$filename;
+
+
+        // Now let's move the uploaded image into the folder: image
+        if (move_uploaded_file($tempname, $folder))  {
+            $msg = "Image uploaded successfully";
+        } else {
+            $msg = "Failed to upload image";
+        }
+
         $animais = DB::table('animais')->insert([
             'id_usuario' => $id_usuario,
             'id_situacao' => $id_situacao,
@@ -107,7 +118,7 @@ class AnimaisController extends Controller
             'sexo' => $input["sexo"],
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
-
+            'foto' => $filename
         ]);
 
         return view('animais.sucesso');

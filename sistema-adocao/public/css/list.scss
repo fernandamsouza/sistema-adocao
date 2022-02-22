@@ -199,3 +199,17 @@ html, body {
   left: 70%;
   width: 80px;
 }
+
+#resize {
+  width: 125px; /* you can use % */
+  height: 125px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  border-radius: 200px;
+  border-color: rgb(21, 42, 87);
+  border-style: solid;
+  display: inline-block;
+  text-align: center;
+
+}
