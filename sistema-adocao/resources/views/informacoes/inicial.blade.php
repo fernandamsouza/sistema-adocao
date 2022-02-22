@@ -14,6 +14,7 @@
                     <button class="btn btn-primary" ><a href="informacoes/formulario" style="color:white">Criar nova informação pessoal</a></button>
                 </div>
                 <br>
+                <h5>Apenas se já possuir cadastrado informações pessoais:</h5>
                 <div class='row'>
                     <button class="btn btn-primary" ><a href="informacoes/formulario/edit" style="color:white">Editar informação pessoal</a></button>
                 </div>

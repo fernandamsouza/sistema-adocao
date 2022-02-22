@@ -7,6 +7,7 @@ use App\Models\Situacoe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class AnimaisController extends Controller
 {
@@ -36,7 +37,35 @@ class AnimaisController extends Controller
             $animais->where('id_tipo', $id_tipo);
         }
 
+        $animais->where('id_exclusao', 2);
+
         $resultado = $animais->get(['*']);
+
+        foreach ($resultado as $key => $value) {
+            $id_usuario = $value->id_usuario;
+
+            $usuario = DB::table('users')->where('id', $id_usuario)->get();
+
+            $id_informacoes = $usuario[0]->id_informacoes;
+
+            $informacoes = DB::table('informacoes')->where('id', $id_informacoes)->get();
+
+            if (count($informacoes) > 0) {
+                $cidade = $informacoes[0]->cidade;
+                $estado = $informacoes[0]->estado;
+                $pais   = $informacoes[0]->pais;
+                $telefone   = $informacoes[0]->telefone_primario;
+
+                $resultado[$key]->telefone = $telefone;
+                $resultado[$key]->cidade = $cidade;
+                $resultado[$key]->estado = $estado;
+                $resultado[$key]->pais   = $pais;
+            }
+            $resultado[$key]->usu_atual = Auth::user()->id;
+
+
+        }
+
 
         return view('animais.list', ['animais' => $resultado]);
     }
@@ -77,8 +106,19 @@ class AnimaisController extends Controller
             'preco' => $input["preco"],
             'sexo' => $input["sexo"],
             'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s")
+            'updated_at' => date("Y-m-d H:i:s"),
+
         ]);
+
+        return view('animais.sucesso');
+    }
+
+    public function excluir($id) {
+
+        DB::table('animais')
+        ->where('id', $id)
+        ->update(['id_exclusao' => '1']);
+
         return view('animais.sucesso');
     }
 }

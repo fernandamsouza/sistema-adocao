@@ -66,3 +66,6 @@ Route::get('/informacoes/formulario/edit', [App\Http\Controllers\InformacoesCont
 
 # Rota para direcionar para tela de completar informacoes adicionais
 Route::post('/informacoes/editja', [App\Http\Controllers\InformacoesController::class, 'editja'])->name('informacoes')->middleware('auth');
+
+# Rota para direcionar para tela de completar informacoes adicionais
+Route::get('/animais/excluir/{id}', [App\Http\Controllers\AnimaisController::class, 'excluir'])->name('animais')->middleware('auth');
